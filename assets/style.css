@@ -4,7 +4,7 @@ body {
     line-height: 1;
   }
   
-  textarea {
+  input {
     background: transparent;
     border: none;
     resize: none;
@@ -28,6 +28,7 @@ body {
   .time-block {
     text-align: center;
     border-radius: 15px;
+    padding-bottom: 10px;
   }
   
   .row {
@@ -43,18 +44,18 @@ body {
   }
   
   .past {
-    background-color: #7c0505;
-    
+    background-color: #d3d3d3;
+    /* color: white; */
   }
   
   .present {
     background-color: #ff6961;
-    
+    /* color: white; */
   }
   
   .future {
     background-color: #77dd77;
-   
+    /* color: white; */
   }
   
   .saveBtn {
