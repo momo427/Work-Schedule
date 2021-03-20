@@ -51,42 +51,7 @@ function timeTracker() {
     }
   }
 
-    //       //     // To check the time and add the classes for background indicators
-    // //     if (blockTime < timeNow) {
-   
-    // //         $(this).addClass("past");
-    // //     }
-    // //     else if (blockTime === timeNow) {
  
-    // //         $(this).addClass("present");
-    // //     }
-    // //     else if(blockTime > timeNow) {
-    // //         $(this).addClass("future");
-    // }
-        
-    // });
-    // time_convert();
-
-
-
-    // $(".time-blocks").each(function () {
-    //     var blockTime = document.getQuerySelectorALL("hour");
-        
-    //     // To check the time and add the classes for background indicators
-    //     if (blockTime < timeNow) {
-   
-    //         $(this).addClass("past");
-    //     }
-    //     else if (blockTime === timeNow) {
- 
-    //         $(this).addClass("present");
-    //     }
-    //     else if(blockTime > timeNow) {
-    //         $(this).addClass("future");
-           
-
-    //     }
-    // })
 }
 
 //functions for saving events to localStorage: variables included,
@@ -244,30 +209,3 @@ function fiveSlot () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-// Array.from(colorcode).forEach(colorcode => {
-//     let colorcodeIdString = colorcode.id,colorcodeHour;
-//     if (colorcodeIdString) {
-//       colorcodeHour = parseInt(colorcodeIdString);
-//     }
-//     if (colorcodeHour) {
-//       if (currentHour === colorcodeHour) {
-//         setColor(green);
-//       } else if ((currentHour < colorcodeHour) && (currentHour > colorcodeHour - 6)) {
-//         setColor(color, "blue");
-//       } else if ((currentHour > colorcodeHour) && (currentHour < colorcodeHour + 6)) {
-//         setColor(color, "red");
-//       } else {
-//         setColor(color, "white");
-//       }
-//     }
-//   });
