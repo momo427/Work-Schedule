@@ -12,7 +12,6 @@ window.onload =function () {
 }
 
 
-
 //Current time display
 var currentDay = moment().format("dddd LL");
 $('#currentDay').append(currentDay);
@@ -21,33 +20,73 @@ var currentTime = moment().format("LT");
 $('#currentTime').append(currentTime);
 
 //functions for color coded timeblocks, past,present,future
-
+//I feel like the timeNow variable is fine but the rest idk, I dont full understand jquery
 function timeTracker() {
     //get current number of hours.
     var timeNow = moment().hour();
 
     // loop over time blocks
-    $(".time-blocks").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+    var time = document.getElementsByClassName("hour");
+    var test = document.querySelectorAll(".form-control");
+    
+    
+  for (let j = 0; j < test.length; j++) {
+    for (let i = 0; i < time.length; i++) {
+        var scheduleTime = time.item(i).id;
+        var section = test.item(i)
+        
+         // To check the time and add the classes for background indicators
+            if (scheduleTime < timeNow) {
+                section.style.backgroundColor = "yellow";
+                time.item(i).style.backgroundColor = "yellow";
+            }
+            else if (scheduleTime == timeNow) {
+                section.style.backgroundColor = "blue";
+                time.item(i).style.backgroundColor = "blue";
+            }
+            else if(scheduleTime > timeNow) {
+                section.style.backgroundColor = "green";
+                time.item(i).style.backgroundColor = "green";
+        }
+    }
+  }
 
-        // To check the time and add the classes for background indicators
-        if (blockTime < timeNow) {
-            $(this).removeClass("future");
-            $(this).removeClass("present");
-            $(this).addClass("past");
-        }
-        else if (blockTime === timeNow) {
-            $(this).removeClass("past");
-            $(this).removeClass("future");
-            $(this).addClass("present");
-        }
-        else {
-            $(this).removeClass("present");
-            $(this).removeClass("past");
-            $(this).addClass("future");
+    //       //     // To check the time and add the classes for background indicators
+    // //     if (blockTime < timeNow) {
+   
+    // //         $(this).addClass("past");
+    // //     }
+    // //     else if (blockTime === timeNow) {
+ 
+    // //         $(this).addClass("present");
+    // //     }
+    // //     else if(blockTime > timeNow) {
+    // //         $(this).addClass("future");
+    // }
+        
+    // });
+    // time_convert();
 
-        }
-    })
+
+
+    // $(".time-blocks").each(function () {
+    //     var blockTime = document.getQuerySelectorALL("hour");
+        
+    //     // To check the time and add the classes for background indicators
+    //     if (blockTime < timeNow) {
+   
+    //         $(this).addClass("past");
+    //     }
+    //     else if (blockTime === timeNow) {
+ 
+    //         $(this).addClass("present");
+    //     }
+    //     else if(blockTime > timeNow) {
+    //         $(this).addClass("future");
+           
+
+    //     }
+    // })
 }
 
 //functions for saving events to localStorage: variables included,
@@ -215,3 +254,20 @@ function fiveSlot () {
 
 
 
+// Array.from(colorcode).forEach(colorcode => {
+//     let colorcodeIdString = colorcode.id,colorcodeHour;
+//     if (colorcodeIdString) {
+//       colorcodeHour = parseInt(colorcodeIdString);
+//     }
+//     if (colorcodeHour) {
+//       if (currentHour === colorcodeHour) {
+//         setColor(green);
+//       } else if ((currentHour < colorcodeHour) && (currentHour > colorcodeHour - 6)) {
+//         setColor(color, "blue");
+//       } else if ((currentHour > colorcodeHour) && (currentHour < colorcodeHour + 6)) {
+//         setColor(color, "red");
+//       } else {
+//         setColor(color, "white");
+//       }
+//     }
+//   });
